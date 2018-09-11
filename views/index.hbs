@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sparta Shopping</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="app">
+      <h1> Sparta Shopping </h1>
+      <div class="container">
+          <div class="menu">
+            <h2> Menu </h2>
+            <form action="/add" method="post">
+              <input type="text" name="name" class="item-textbox">
+              <button type="submit">Add Item</button>
+            </form>
+          </div>
+          <div class="shopping-list">
+          <h2> Your Shopping List </h2>
+          <div class="items-container">
+            {{#each items}}
+            <div class="item">
+              <span class="item-name">
+                {{name}}
+              </span>
+              <a href="/delete/{{_id}}"> Remove </a>
+            </div>
+            {{/each}}
+          </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
